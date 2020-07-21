@@ -41,7 +41,7 @@ class Game {
   }
 
   play(){
-    form.hide();
+  form.hide();
 
     Player.getPlayerInfo();
     
@@ -69,6 +69,9 @@ class Game {
         cars[index-1].y = y;
 
         if (index === player.index){
+          stroke(10);
+          fill("red");
+          ellipse(x,y,60,60);
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
@@ -90,7 +93,7 @@ class Game {
     }
 
     drawSprites();
-  }
+  }  
   end(){
     console.log("ended");
     game.update(2);
